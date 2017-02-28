@@ -1,0 +1,72 @@
+	module ECigMod {
+
+			/** Items **/
+
+    item ECig
+    	{
+			HungerChange	=	0,
+	    	Weight	=	0,
+			Type	=	food,
+            ThirstChange = 5,
+		    UnhappyChange	=	-1,
+		    DisplayName	=	ECig,
+	    	StressChange	=	-8,
+		    Icon	=	ecigslim,
+		    CustomContextMenu = Smoke,
+		    CantBeFrozen = TRUE,
+		    CustomEatSound =
+	    }
+
+
+	item ecigpack
+		{
+			Weight	=	0.1,
+			Type   			= Normal,
+			DisplayName	=	ECig Pack,
+			Icon	=	ecigpack,
+		}
+
+	item ecigcarton
+		{
+			Weight	=	1.0,
+			Type   			= Normal,
+			DisplayName	=	ECig Carton,
+			Icon	=	ecigcarton,
+		}
+
+
+		/** Recipes **/
+
+recipe UnPack ECigs
+    	{
+	ecigpack,
+	Result:ECig=20,
+	Time:20.0,
+	Category:Cooking,
+    	}	
+
+recipe Pack ECigs
+    	{
+	ECig=20,
+	Result:ecigpack=1,
+	Time:20.0,
+	Category:Cooking,
+    	}
+
+recipe Carton ECig Packs
+    	{
+	ecigpack=8,
+	Result:ecigcarton=1,
+	Time:20.0,
+	Category:Cooking,
+    	}
+
+recipe UnCarton ECigs
+    	{
+	ecigcarton,
+	Result:ecigpack=8,
+	Time:20.0,
+	Category:Cooking,
+    	}	
+
+    }
